@@ -24,10 +24,11 @@ const BidForm = () => {
   const handleBid = async (e) => {
     e.preventDefault();
     try {
-      const token = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("jwt="))
-        ?.split("=")[1];
+      //   const token = document.cookie
+      //     .split("; ")
+      //     .find((row) => row.startsWith("jwt="))
+      //     ?.split("=")[1];
+      const token = localStorage.getItem("token");
       await axios.post(
         "https://quickbid-an-online-bidding-platform-3.onrender.com/api/bids",
         { auctionItemId: id, bidAmount },

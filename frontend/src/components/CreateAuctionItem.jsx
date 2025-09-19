@@ -13,10 +13,11 @@ const CreateAuctionItem = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("jwt="))
-      ?.split("=")[1];
+    // const token = document.cookie
+    //   .split("; ")
+    //   .find((row) => row.startsWith("jwt="))
+    //   ?.split("=")[1];
+    const token = localStorage.getItem("token");
     if (token) {
       try {
         await axios.post(

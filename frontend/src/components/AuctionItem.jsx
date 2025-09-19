@@ -35,10 +35,7 @@ function AuctionItem() {
     };
 
     const fetchUser = async () => {
-      const token = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("jwt="))
-        ?.split("=")[1];
+      const token = localStorage.getItem("token");
       if (token) {
         try {
           const res = await axios.post(
