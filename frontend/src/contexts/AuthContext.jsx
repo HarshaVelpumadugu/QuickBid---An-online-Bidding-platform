@@ -17,8 +17,9 @@ export const AuthProvider = ({ children }) => {
       .split("; ")
       .find((row) => row.startsWith("jwt="))
       ?.split("=")[1];
-    
+
     if (token) {
+      console.log(token);
       login();
     } else {
       logout();

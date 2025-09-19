@@ -16,6 +16,7 @@ function Login() {
 
   useEffect(() => {
     if (isLoggedIn) {
+      console.log(isLoggedIn);
       navigate("/profile");
     }
   }, [isLoggedIn, navigate]);
@@ -32,6 +33,7 @@ function Login() {
       if (res.status === 200) {
         login();
         toast.success("Logged in Successfully!");
+        console.log(isLoggedIn);
         navigate("/profile");
         // Delay navigation to ensure toast is visible
         //setTimeout(() => {
@@ -53,7 +55,13 @@ function Login() {
         <h2 className="mb-6 text-3xl font-semibold text-white text-center">
           Login
         </h2>
-        <form onSubmit={handleLogin} className="space-y-4" autoComplete="off">
+        <form
+          id="login-form"
+          name="loginForm"
+          onSubmit={handleLogin}
+          className="space-y-4"
+          autoComplete="off"
+        >
           <div className="flex items-center border rounded-md border-gray-600 bg-gray-700">
             <FiMail className="w-6 h-6 text-gray-400 ml-3" />
             <input

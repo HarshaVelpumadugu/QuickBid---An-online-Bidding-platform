@@ -49,7 +49,13 @@ function Signup() {
         <h2 className="mb-6 text-3xl font-semibold text-white text-center">
           Signup
         </h2>
-        <form onSubmit={handleSignup} className="space-y-4" autoComplete="off">
+        <form
+          id="signup-form"
+          name="signupForm"
+          onSubmit={handleSignup}
+          className="space-y-4"
+          autoComplete="off"
+        >
           <div className="flex items-center border rounded-md border-gray-600 bg-gray-700">
             <FiUser className="w-6 h-6 text-gray-400 ml-3" />
             <input
