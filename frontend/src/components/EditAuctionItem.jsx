@@ -19,6 +19,11 @@ const EditAuctionItem = () => {
         `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
+      const item = res.data;
+      if (item.endDate) {
+        const date = new Date(item.endDate);
+        item.endDate = date.toISOString().slice(0, 16);
+      }
       setAuctionItem(res.data);
     };
     fetchAuctionItem();
