@@ -25,8 +25,10 @@ function AuctionItem() {
   useEffect(() => {
     const fetchAuctionItem = async () => {
       try {
+        const token = localStorage.getItem("token");
         const res = await axios.get(
-          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`
+          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`,
+          { headers: { Authorization: `Bearer ${token}` } }
         );
         setAuctionItem(res.data);
       } catch (error) {
@@ -54,8 +56,10 @@ function AuctionItem() {
 
     const fetchWinner = async () => {
       try {
+        const token = localStorage.getItem("token");
         const res = await axios.get(
-          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/winner/${id}`
+          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/winner/${id}`,
+          { headers: { Authorization: `Bearer ${token}` } }
         );
         setWinner(res.data.winner);
       } catch (error) {
@@ -74,8 +78,10 @@ function AuctionItem() {
     const fetchBids = async () => {
       setLoadingBids(true);
       try {
+        const token = localStorage.getItem("token");
         const res = await axios.get(
-          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/bids/${id}`
+          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/bids/${id}`,
+          { headers: { Authorization: `Bearer ${token}` } }
         );
         const sortedBids = res.data.sort((a, b) => b.bidAmount - a.bidAmount);
         setBids(sortedBids);
@@ -121,8 +127,10 @@ function AuctionItem() {
 
   const handleDelete = async () => {
     try {
+      const token = localStorage.getItem("token");
       await axios.delete(
-        `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`
+        `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`,
+        { headers: { Authorization: `Bearer ${token}` } }
       );
       navigate("/profile");
     } catch (error) {

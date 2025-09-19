@@ -14,8 +14,10 @@ const EditAuctionItem = () => {
 
   useEffect(() => {
     const fetchAuctionItem = async () => {
+      const token = localStorage.getItem("token");
       const res = await axios.get(
-        `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`
+        `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`,
+        { headers: { Authorization: `Bearer ${token}` } }
       );
       setAuctionItem(res.data);
     };
@@ -32,8 +34,10 @@ const EditAuctionItem = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
     await axios.put(
       `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`,
+      { headers: { Authorization: `Bearer ${token}` } },
       auctionItem
     );
     navigate(`/auction/${id}`);
