@@ -11,6 +11,7 @@ export const protectRoute = async (req, res, next) => {
       req.headers.authorization.startsWith("Bearer")
     ) {
       token = req.headers.authorization.split(" ")[1];
+      console.log("Received Token:", token);
     }
 
     if (!token) {
@@ -22,10 +23,10 @@ export const protectRoute = async (req, res, next) => {
 
     // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
+    console.log("Decoded Token:", decoded);
     // Fetch user without password
     const user = await User.findById(decoded.id).select("-password");
-
+    console.log(user);
     if (!user) {
       return res.status(401).json({
         success: false,
