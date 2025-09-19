@@ -16,7 +16,7 @@ function Logout() {
     const logout = async () => {
       try {
         await axios.post(
-          "https://quickbid-an-online-bidding-platform.onrender.com/api/users/logout",
+          "https://quickbid-an-online-bidding-platform-3.onrender.com/api/users/logout",
           {}
         );
         document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";

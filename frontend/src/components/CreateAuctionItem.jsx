@@ -20,7 +20,7 @@ const CreateAuctionItem = () => {
     if (token) {
       try {
         await axios.post(
-          "https://quickbid-an-online-bidding-platform.onrender.com/api/auctions",
+          "https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions",
           { title, description, startingBid, endDate },
           {
             headers: { Authorization: `Bearer ${token}` },

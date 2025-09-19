@@ -14,7 +14,7 @@ function AuctionList() {
   useEffect(() => {
     const fetchAuctionItems = async () => {
       const res = await axios.get(
-        "https://quickbid-an-online-bidding-platform.onrender.com/api/auctions"
+        "https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions"
       );
       setAuctionItems(res.data);
       setSearchResults(res.data);

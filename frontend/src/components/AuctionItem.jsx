@@ -26,7 +26,7 @@ function AuctionItem() {
     const fetchAuctionItem = async () => {
       try {
         const res = await axios.get(
-          `https://quickbid-an-online-bidding-platform.onrender.com/api/auctions/${id}`
+          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`
         );
         setAuctionItem(res.data);
       } catch (error) {
@@ -42,7 +42,7 @@ function AuctionItem() {
       if (token) {
         try {
           const res = await axios.post(
-            "https://quickbid-an-online-bidding-platform.onrender.com/api/users/profile",
+            "https://quickbid-an-online-bidding-platform-3.onrender.com/api/users/profile",
             {},
             {
               headers: { Authorization: `Bearer ${token}` },
@@ -58,7 +58,7 @@ function AuctionItem() {
     const fetchWinner = async () => {
       try {
         const res = await axios.get(
-          `https://quickbid-an-online-bidding-platform.onrender.com/api/auctions/winner/${id}`
+          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/winner/${id}`
         );
         setWinner(res.data.winner);
       } catch (error) {
@@ -78,7 +78,7 @@ function AuctionItem() {
       setLoadingBids(true);
       try {
         const res = await axios.get(
-          `https://quickbid-an-online-bidding-platform.onrender.com/api/bids/${id}`
+          `https://quickbid-an-online-bidding-platform-3.onrender.com/api/bids/${id}`
         );
         const sortedBids = res.data.sort((a, b) => b.bidAmount - a.bidAmount);
         setBids(sortedBids);
@@ -125,7 +125,7 @@ function AuctionItem() {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `https://quickbid-an-online-bidding-platform.onrender.com/api/auctions/${id}`
+        `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`
       );
       navigate("/profile");
     } catch (error) {

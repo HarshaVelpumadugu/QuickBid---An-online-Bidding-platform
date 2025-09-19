@@ -25,7 +25,7 @@ function Login() {
     setLoading(true);
     try {
       const res = await axios.post(
-        "https://quickbid-an-online-bidding-platform.onrender.com/api/users/login",
+        "https://quickbid-an-online-bidding-platform-3.onrender.com/api/users/login",
         { email, password },
         { withCredentials: true }
       );
