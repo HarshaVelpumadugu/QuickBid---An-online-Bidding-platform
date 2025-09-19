@@ -22,6 +22,7 @@ function Profile() {
         .split("; ")
         .find((row) => row.startsWith("jwt="))
         ?.split("=")[1];
+      console.log(token);
       if (token) {
         try {
           const res = await axios.post(
