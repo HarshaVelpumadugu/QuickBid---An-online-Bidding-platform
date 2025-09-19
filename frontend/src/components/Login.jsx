@@ -31,6 +31,7 @@ function Login() {
         { withCredentials: true }
       );
       if (res.status === 200) {
+        localStorage.setItem("token", res.data.token);
         login();
         toast.success("Logged in Successfully!");
         console.log(isLoggedIn);

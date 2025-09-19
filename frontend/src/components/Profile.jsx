@@ -18,10 +18,11 @@ function Profile() {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const token = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("jwt="))
-        ?.split("=")[1];
+      //   const token = document.cookie
+      //     .split("; ")
+      //     .find((row) => row.startsWith("jwt="))
+      //     ?.split("=")[1];
+      const token = localStorage.getItem("token");
       console.log(token);
       if (token) {
         try {
