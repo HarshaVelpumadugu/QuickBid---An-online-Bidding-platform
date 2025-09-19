@@ -47,6 +47,7 @@ export const getAuctionItemById = async (req, res) => {
   const { id } = req.params;
   try {
     const auctionItem = await AuctionItem.findById(id);
+    console.log(auctionItem);
     if (!auctionItem) {
       return res.status(404).json({ message: "Auction item not found" });
     }
