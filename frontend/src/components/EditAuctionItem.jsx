@@ -37,8 +37,8 @@ const EditAuctionItem = () => {
     const token = localStorage.getItem("token");
     await axios.put(
       `https://quickbid-an-online-bidding-platform-3.onrender.com/api/auctions/${id}`,
-      { headers: { Authorization: `Bearer ${token}` } },
-      auctionItem
+      auctionItem,
+      { headers: { Authorization: `Bearer ${token}` } }
     );
     navigate(`/auction/${id}`);
   };
