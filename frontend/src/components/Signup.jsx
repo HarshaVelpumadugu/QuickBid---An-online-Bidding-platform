@@ -44,13 +44,7 @@ function Signup() {
   };
 
   return (
-    <div
-      className="flex items-center justify-center min-h-screen bg-gray-700 bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('https://source.unsplash.com/1600x900/?signup,technology')",
-      }}
-    >
+    <div className="flex items-center justify-center min-h-screen bg-gray-700 bg-cover bg-center">
       <div className="w-full max-w-md p-8 bg-gray-800 bg-opacity-80 rounded-lg shadow-lg">
         <h2 className="mb-6 text-3xl font-semibold text-white text-center">
           Signup
