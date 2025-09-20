@@ -21,7 +21,7 @@ function App() {
 			<Router>
 			    <NavBar />
 				<Toaster/>
-				<div className="container mx-auto">
+				<div className="max-w-full mx-auto">
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/signup" element={<Signup />} />
